@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PrettySnippet</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body onload="onload();">
+
+    <main>
+        <h1>Hi, this is pretty snippet</h1>
+
+        <div id="snippet-setup">
+
+            <div id="snippet-controls">
+                <label>(File) name</label>      <input type="text" id="snippet-controls-filename" value="helloworld.cs">
+                <label>Language</label>         <input type="text" id="snippet-controls-language" value="C#">
+                <label>Border style</label>     <select id="snippet-controls-borderstyle"><option>KDE (Breeze)</option></select>
+                <label>Color Scheme</label>     <select id="snippet-controls-colorscheme"><option>Visual Studio</option></select>
+                <label>Code Font</label>
+                                                <span><select id="snippet-controls-codefont">
+                                                    <option>JetBrains Mono</option>
+                                                    <option>Liberation Mono</option>
+                                                    <option>Noto Sans Mono</option>
+                                                    <option>Consolas</option>
+                                                </select><input type="number" id="snippet-controls-codefont-size" value="12"></span>
+                <label>Title Font</label>
+                                                <span><select id="snippet-controls-titlefont">
+                                                    <option>Noto Sans</option>
+                                                    <option>Roboto</option>
+                                                    <option>Roboto Light</option>
+                                                    <option>Segoe UI</option>
+                                                </select><input type="number" id="snippet-controls-titlefont-size" value="10"></span>
+            </div>
+
+            <div id="snippet-content">
+                <label>Code: </label><br />
+<!--                <textarea id="snippet-content-code"></textarea>-->
+                <div id="snippet-content-code" contenteditable="true">
+                    <div style="color: #d4d4d4;background-color: #1e1e1e;font-family: 'Droid Sans Mono', 'monospace', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div><span style="color: #6a9955;">/*</span></div><div><span style="color: #6a9955;">copy your code from your editor (that supports rich text)</span></div><div><span style="color: #6a9955;">here, VS Code and the JetBrains IDEs do this</span></div><div><span style="color: #6a9955;">to replace this use Ctrl+A Ctrl+V (Cmd+A Cmd+V, on mac)</span></div><div><span style="color: #6a9955;">it's normal that it breaks on this side</span></div><div><span style="color: #6a9955;">use the apply button to send it to the right side, </span></div><div><span style="color: #6a9955;">the right side can be resized downward if needed</span></div><div><span style="color: #6a9955;">*/</span></div><br><div><span style="color: #569cd6;">public</span><span style="color: #d4d4d4;"> </span><span style="color: #569cd6;">void</span><span style="color: #d4d4d4;"> </span><span style="color: #dcdcaa;">Main</span><span style="color: #d4d4d4;">()</span></div><div><span style="color: #d4d4d4;">{</span></div><div><span style="color: #d4d4d4;">    </span><span style="color: #9cdcfe;">Console</span><span style="color: #d4d4d4;">.</span><span style="color: #dcdcaa;">WriteLine</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"Hello World"</span><span style="color: #d4d4d4;">);</span></div><div><span style="color: #d4d4d4;">}</span></div></div>
+                </div>
+                <input type="button" value="Apply" id="snippet-controls-apply" onclick="applySettings();">
+            </div>
+
+        </div>
+
+        <div id="snippet-preview">
+
+            <div id="snippet-preview-titlebar">
+                <span id="snippet-preview-titletext"><span id="snippet-preview-lang">C#</span> - <span id="snippet-preview-name">helloworld.cs</span></span>
+
+                <span id="snippet-preview-titlebar-theme-kde" class="snippet-preview-titlebar-theme">
+                    <span id="kde-windowctrl" class="snippet-preview-windowctrl">
+                        <span id="kde-maximize" class="snippet-preview-button">/\</span>
+                        <span id="kde-minimize" class="snippet-preview-button">\/</span>
+                        <span id="kde-close" class="snippet-preview-button">X</span>
+                    </span>
+                    <span id="kde-icon" class="snippet-preview-icon">K</span>
+                </span>
+
+            </div>
+<!--            <textarea id="snippet-preview-code" readonly>-->
+<!--                public void Main() {-->
+<!--    Console.PrintLine("Hello World");-->
+<!--}-->
+<!--            </textarea>-->
+            <div id="snippet-preview-code">
+                <div style="font-weight: normal; white-space: pre;"><div style="display: flex; flex-wrap: wrap;"><span style="color: #6a9955;">/*</span></div><div style="display: flex; flex-wrap: wrap;"><span style="color: #6a9955;">this side will show the copied text with it's new style</span></div><div style="display: flex; flex-wrap: wrap;"><span style="color: #6a9955;">currently this applies the style the IDE uses</span></div><br><div style="display: flex; flex-wrap: wrap;"><span style="color: #6a9955;">use your browsers screenshot tool and select the div,</span></div><div style="display: flex; flex-wrap: wrap;"><span style="color: #6a9955;">that's over or under this window, the text at the bottom</span></div><div style="display: flex; flex-wrap: wrap;"><span style="color: #6a9955;">is a good place to click</span></div><br><div style="display: flex; flex-wrap: wrap;"><span style="color: #6a9955;">also text wrapping is currently broken</span></div><div style="display: flex; flex-wrap: wrap;"><span style="color: #6a9955;">*/</span></div></div>
+            </div>
+            <span id="snippet-preview-refhint">PrettySnippet <a href="https://www.github.com/jenniferprime/prettysnippet">github.com/jenniferprime/prettysnippet</a></span>
+
+        </div>
+
+
+    </main>
+
+</body>
+</html>

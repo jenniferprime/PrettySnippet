@@ -1,0 +1,13 @@
+/*
+    blue color thingy #007bcd
+    background #1e1e1e
+
+*/
+
+#snippet-preview-code {
+    /*background-color: #1e1e1e !important;*/
+}
+
+#snippet-preview-code::selection {
+    background-color: #007bcdBB;
+}

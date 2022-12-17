@@ -1,0 +1,210 @@
+/*@import "borderstyles/kde-breeze.css";*/
+@import "borderstyles/macos-dark.css";
+@import "colorschemes/visualstudiodark.css";
+
+:root {
+    --titlebar-text-size: 10pt;
+    --titlebar-size: 24px;
+
+    --code-width: 645px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    /*border: 1px solid darkred;*/
+}
+
+body {
+    background-color: #333;
+    color: #EEE;
+
+    font-family: "Roboto Light", sans-serif;
+}
+
+main {
+
+    max-width: 85rem;
+    width: 100%;
+
+    margin: 3rem auto;
+
+    display: grid;
+    grid-template-rows: 4rem auto;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
+}
+
+main h1 {
+    grid-row: 1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    line-height: 4rem;
+    user-select: none;
+}
+
+
+
+
+#snippet-setup {
+    grid-row: 2;
+
+    padding: 0 4rem;
+
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto 1fr;
+
+}
+
+#snippet-setup label {
+    grid-column: 1;
+    user-select: none;
+}
+
+#snippet-setup * {
+    grid-column: 2;
+}
+
+#snippet-setup span {
+    margin: 0;
+    display: inline-grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: auto;
+    width: 100%;
+}
+
+#snippet-setup span select{
+    grid-column: 1;
+    margin-right: 1rem;
+}
+
+#snippet-setup span input {
+    grid-column: 2;
+    width: 100%;
+}
+
+#snippet-controls * {
+    margin: 0.1rem;
+    height: 1.5rem;
+}
+
+#snippet-controls {
+    grid-row: 1;
+
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(auto-fill, 2rem);
+}
+
+#snippet-content {
+    margin-top: 2rem;
+    grid-row: 2;
+}
+
+#snippet-content-code {
+    background-color: #3c3c3c;
+    border-radius: 3px;
+    width: var(--code-width);
+    height: fit-content;
+    overflow: hidden;
+    min-height: 5rem;
+    resize: vertical;
+
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+}
+
+#snippet-preview-refhint {
+    color: #AAAA;
+    font-size: 7pt;
+
+    position: relative;
+    top: -0.5rem;
+}
+
+#snippet-preview-refhint a {
+    color: inherit;
+}
+
+#snippet-controls-apply {
+    float: right;
+}
+
+
+
+
+#snippet-preview {
+    grid-row: 2;
+    user-select: none;
+    user-focus: none;
+
+    width: var(--code-width);
+    background-color: #FFF0;
+    padding: 10px 0;
+
+}
+
+
+#snippet-preview-code {
+
+    width: var(--code-width);
+    overflow-x: hidden;
+    overflow-wrap: anywhere;
+    resize: vertical;
+    aspect-ratio: 4/2.5;
+
+/* TODO: fix height since fit-content doesn't work */
+
+    border: none;
+    border-radius: 0;
+    background-color: #555;
+    color: #EEEEEE;
+    user-select: none;
+    user-focus: none;
+
+    padding: 0.5rem;
+    cursor: default;
+
+
+}
+
+
+/* here for if it's a textarea*/
+#snippet-preview-code:active, #snippet-preview-code:focus, #snippet-preview-code:focus-visible, #snippet-preview-code:focus-within {
+    border: none;
+    outline: none;
+    cursor: default;
+}
+
+#snippet-preview-code pre * *{
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+#snippet-preview-titlebar {
+    height: var(--titlebar-size);
+    width: var(--code-width);
+}
+
+#snippet-preview-titletext {
+    position: absolute;
+    var(--titlebar-size);
+    line-height: var(--titlebar-size);
+    font-size: var(--titlebar-text-size);
+
+    width: var(--code-width);
+
+    text-align: center;
+}
+
+.snippet-preview-titlebar-theme {
+    width: var(--code-width);
+    height: var(--titlebar-size);
+    display: block;
+    padding: 0 0.5rem;
+}

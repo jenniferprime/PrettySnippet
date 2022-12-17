@@ -1,0 +1,13 @@
+#kde-windowctrl {
+    float: right;
+}
+
+#kde-windowctrl span {
+    width: var(--titlebar-text-size);
+    height: var(--titlebar-text-size);
+}
+
+#snippet-preview-titlebar-theme-kde {
+    background-color: green;
+    border-radius: 7px 7px 0 0;
+}
